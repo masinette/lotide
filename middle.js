@@ -1,39 +1,6 @@
-const assertArraysEqual = function(firstArray, secondArray){
-  // console.log(firstArray, secondArray);
-  // console.log("Return value:", (eqArrays(firstArray, secondArray)))
-  if (eqArrays(firstArray, secondArray) === true){
-    console.log("These two arrays match")
-  } 
-  if (eqArrays(firstArray, secondArray) === false){
-    console.log("These arrays do not match.")
-  }
-}
+const assertArraysEqual = require(".//assertArraysEqual");
 
-const eqArrays = function(arrayOne, arrayTwo){
-  //  console.log("ARRAY 1:", arrayOne)
-  //  console.log("ARRAY 2:", arrayTwo)
-  
-    let answerArray = [];
-  
-    //loop through arrayOne and arrayTwo and push boolean answer to new array
-    for ( let i = 0; i < arrayOne.length; i++){
-      if ((arrayOne[i]) === (arrayTwo[i])){
-        answerArray.push(true);
-      } else{
-        answerArray.push(false);
-      }
-    }
-  // console.log("AnswerArray:" ,answerArray);
-    //loop through answerArray and return true or false
-    for ( let i = 0; i < answerArray.length; i++){
-      if (answerArray[i] === false){
-        // console.log("inside if statement: false" )
-        return false;
-      } 
-    }
-    // console.log("true");
-    return true;
-  }
+const eqArrays = require("./eqArrays");
 
 
 //Implement middle which will take in an array and return the 
@@ -67,11 +34,3 @@ const middle = function(array){
 
 }
 
-middle([1]) // => []
-middle([1, 2]) // => []
-
-middle([1, 2, 3]) // => [2]
-middle([1, 2, 3, 4, 5]) // => [3]
-
-middle([1, 2, 3, 4]) // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
