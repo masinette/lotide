@@ -46,7 +46,7 @@ two objects and console.log an appropriate message to the console.
 // FUNCTION IMPLEMENTATION
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect; // <= add this line
-  console.log(`Example label: ${inspect(actual)}`);
+  // console.log(`Example label: ${inspect(actual)}`);
   if ((eqObjects(actual, expected)) === true){
     console.log("These two objects match")
   } 
