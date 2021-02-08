@@ -17,7 +17,7 @@ If no key with that given value is found, then it should return undefined.
 
 const findKeyByValue = function(testObject, testValue){
   //looping over the testObject 
-  for (let parts in testObject ){
+  for (let parts in testObject ) {
       // console.log("parts",parts);
       // console.log(testObject[parts]);
       // console.log("testValue",testValue);

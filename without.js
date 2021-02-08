@@ -33,7 +33,7 @@ const eqArrays = function(arrayOne, arrayTwo){
     }
     // console.log("true");
     return true;
-  }
+}
 
 
   //Implement without which will return a 

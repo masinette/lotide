@@ -9,31 +9,55 @@ const assertEqual = function(actual, expected) {
 };
 // implement a function eqArrays which takes in two arrays 
 // and returns true or false, based on a perfect match.
-
-
 const eqArrays = function(arrayOne, arrayTwo){
- 
-  let answerArray = [];
-
-  //loop through arrayOne and arrayTwo and push boolean answer to new array
-  for ( let i = 0; i < arrayOne.length; i++){
-    if ((arrayOne[i]) === (arrayTwo[i])){
-      answerArray.push(true);
-    } else{
-      answerArray.push(false);
+  //check arrays are not the same length
+  if (arrayOne.length !== arrayTwo.length){
+    return false;
+  }
+  //loop through array and check if items at each index match
+  for (let i = 0; i < arrayOne.length; i++){
+    if (arrayOne[i] !== arrayTwo[i]){
+      return false;
     }
   }
-
-  //loop through answerArray and return true or false
-  for ( let i = 0; i < arrayOne.length; i++){
-    if (answerArray[i] === false){
-      console.log("false")
-      return false;
-    } 
-  }
-  console.log("true");
   return true;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const eqArrays = function(arrayOne, arrayTwo){
+ 
+//   let answerArray = [];
+
+//   //loop through arrayOne and arrayTwo and push boolean answer to new array
+//   for ( let i = 0; i < arrayOne.length; i++){
+//     if ((arrayOne[i]) === (arrayTwo[i])){
+//       answerArray.push(true);
+//     } else{
+//       answerArray.push(false);
+//     }
+//   }
+
+//   //loop through answerArray and return true or false
+//   for ( let i = 0; i < arrayOne.length; i++){
+//     if (answerArray[i] === false){
+//       console.log("false")
+//       return false;
+//     } 
+//   }
+//   // console.log("true");
+//   return true;
+// }
 // "remember to put return 
 //outside of loop when testing 
 //a whole array, so it runs 
@@ -43,8 +67,8 @@ const eqArrays = function(arrayOne, arrayTwo){
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
 
-eqArrays([1, 2, 3], [1, 2, 3]) // => true
-eqArrays([1, 2, 3], [3, 2, 1]) // => false
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
+assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => false
 
-eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
-eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // => false

@@ -52,14 +52,10 @@ const takeUntil = function(array, callback) {
     }
     //if the callback value is true, stop running and return approvedArray
     if (callback(item)){
-      return approvedItems
+      return approvedItems;
     }
   }
 }
-
-
-
-
 
 
 
