@@ -9,25 +9,9 @@ ignoring the others.
 Items in our case will be limited to Strings. 
 */
 
-const assertArraysEqual = function(firstArray, secondArray){
-  // console.log(firstArray, secondArray);
-  // console.log("Return value:", (eqArrays(firstArray, secondArray)))
-  if (eqArrays(firstArray, secondArray) === true){
-    console.log("These two arrays match")
-  } 
-  if (eqArrays(firstArray, secondArray) === false){
-    console.log("These arrays do not match.")
-  }
-}
-const assertEqual = function(actual, expected) {
+const assertArraysEqual = require('./assertArraysEqual');
+const assertEqual = require('./assertEqual');
 
-  if (actual === expected){
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  }
-  else{
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
 /////// ^^CALLING PREVIOUS FUNCTION^^ /////////////
 
 // allItems: an array of strings that we need to look through
@@ -43,10 +27,10 @@ const countOnly = function(allItems, itemsToCount) {
   // inside the loop,increment the counter for each item:
 
   // inside the loop:
-  console.log("itemstocount:     ",itemsToCount[item]);
+  // console.log("itemstocount:     ",itemsToCount[item]);
     if (itemsToCount[item]) { 
       if (results[item]) {
-        console.log("RESULTS ITEM:", results[item])
+        // console.log("RESULTS ITEM:", results[item])
       results[item] += 1;
       } else {
         results[item] = 1;
@@ -55,28 +39,28 @@ const countOnly = function(allItems, itemsToCount) {
   }
   return results;
 }
-
+module.exports = countOnly;
 
 
 
 /// TEST CONDITIONS ///////
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe" 
-];
+// const firstNames = [
+//   "Karl",
+//   "Salima",
+//   "Agouhanna",
+//   "Fang",
+//   "Kavith",
+//   "Jason",
+//   "Salima",
+//   "Fang",
+//   "Joe" 
+// ];
 
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+// const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
 
 
 
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
+// assertEqual(result1["Jason"], 1);
+// assertEqual(result1["Karima"], undefined);
+// assertEqual(result1["Fang"], 2);
+// assertEqual(result1["Agouhanna"], undefined);
